@@ -28,6 +28,10 @@
        "s-." 'rspec-toggle-spec-and-target)
 (map! :map elixir-mode-map
        "s-." 'projectile-toggle-between-implementation-and-test)
+(map! :map ruby-mode-map
+       "C-c ." 'rspec-toggle-spec-and-target)
+(map! :map elixir-mode-map
+       "C-c ." 'projectile-toggle-between-implementation-and-test)
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
