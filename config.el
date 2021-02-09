@@ -50,7 +50,7 @@
 ;; `load-theme' function. This is the default:
 
 (setq doom-gruvbox-dark-variant "soft")
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-dark+)
 (setq doom-font (font-spec :family "JetbrainsMono Nerd Font Mono" :size 15))
 
 ;; If you use `org' and don't want your org files in the default location below,
