@@ -17,7 +17,7 @@
 (setq company-idle-delay .5)
 (setq doom-modeline-buffer-encoding nil)
 (setq doom-modeline-percent-position nil)
-(setq global-visual-line-mode 1)
+(global-visual-line-mode t)
 (setq word-wrap 1)
 
 (global-set-key (kbd "C-c a r") 'anzu-query-replace-regexp)
