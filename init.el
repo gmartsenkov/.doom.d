@@ -20,10 +20,10 @@
        ;;layout            ; auie,ctsrnm is the superior home row
 
        :completion
-       (company +childframe)           ; the ultimate code completion backend
+       (company)           ; the ultimate code completion backend
        ;(helm +icons +childframe)              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       (ivy +icons +childframe)               ; a search engine for love and life
+       (ivy +icons)               ; a search engine for love and life
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -34,7 +34,7 @@
        ;;fill-column       ; a `fill-column' indicator
        ;;hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;hydra
-       indent-guides     ; highlighted indent columns
+       ;;(indent-guides)     ; highlighted indent columns
        ;;ligatures         ; ligatures and symbols to make your code pretty again
        ;;minimap           ; show a map of the code on the side
        (modeline +light)         ; snazzy, Atom-inspired modeline, plus API
@@ -68,7 +68,7 @@
        :emacs
        (dired +icons)             ; making dired pretty [functional]
        ;;electric          ; smarter, keyword-based electric-indent
-       (ibuffer +icons)         ; interactive buffer management
+       ;;(ibuffer +icons)         ; interactive buffer management
        undo              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
 
@@ -79,7 +79,7 @@
        ;;vterm             ; the best terminal emulation in Emacs
 
        :checkers
-       syntax              ; tasing you for every semicolon you forget
+       ;;syntax              ; tasing you for every semicolon you forget
        ;;spell             ; tasing you for misspelling mispelling
        ;;grammar           ; tasing grammar mistake every you make
 

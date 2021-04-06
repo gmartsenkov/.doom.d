@@ -9,7 +9,7 @@
 (setq user-full-name "Georgi Martsenkov"
       user-mail-address "g.martsenkov@gmail.com")
 
-
+(setq lsp-enable-file-watchers nil)
 (setq lsp-clients-elixir-server-executable "~/elixir-ls/release/language_server.sh")
 (setq rustic-lsp-server 'rust-analyzer)
 (setq ruby-insert-encoding-magic-comment nil)
@@ -50,7 +50,7 @@
 ;; `load-theme' function. This is the default:
 
 (setq doom-gruvbox-dark-variant "soft")
-(setq doom-theme 'doom-dark+)
+(setq doom-theme 'doom-gruvbox)
 (setq doom-font (font-spec :family "JetbrainsMono Nerd Font Mono" :size 15))
 
 ;; If you use `org' and don't want your org files in the default location below,
