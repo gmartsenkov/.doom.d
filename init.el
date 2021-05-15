@@ -181,4 +181,4 @@
 
        :config
        ;;literate
-       default)
+       (default +bindings))
