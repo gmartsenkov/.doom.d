@@ -80,3 +80,10 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;;
+
+(after! circe
+  (set-irc-server! "localhost"
+    `(:port 6667
+      :sasl-username "gogo"
+      :nick "gogo")))
