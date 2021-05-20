@@ -86,4 +86,4 @@
   (set-irc-server! "localhost"
     `(:port 6667
       :sasl-username "gogo"
-      :nick "gogo")))
+      :nick "gogo")))
