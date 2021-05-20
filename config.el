@@ -22,6 +22,7 @@
 
 (global-set-key (kbd "C-c a r") 'anzu-query-replace-regexp)
 (global-set-key (kbd "s-d") 'duplicate-thing)
+(global-set-key (kbd "M-o") 'ace-window)
 
 (map! "s-b" 'xref-find-definitions)
 (map! :map ruby-mode-map
