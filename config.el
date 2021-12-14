@@ -20,23 +20,23 @@
 (global-visual-line-mode t)
 (setq word-wrap 1)
 
-(map! :after ruby-mode
-      :map ruby-mode-map
-      :leader
-      :nv "t t" #'rspec-toggle-spec-and-target
-      :nv "t v" #'rspec-verify
-      :nv "t l" #'rspec-run-last-failed
-      :nv "t c" #'rspec-verify-single
-      :nv "t a" #'rspec-verify-all
-      :nv "m b i" #'bundle-install
-      :nv "m p" #'rubocop-check-project)
+(add-hook! 'ruby-mode-hook
+  (map! :mode ruby-mode
+        :leader
+        :nv "t t" #'rspec-toggle-spec-and-target
+        :nv "t v" #'rspec-verify
+        :nv "t l" #'rspec-run-last-failed
+        :nv "t c" #'rspec-verify-single
+        :nv "t a" #'rspec-verify-all
+        :nv "m b i" #'bundle-install
+        :nv "m p" #'rubocop-check-project))
 
-(map! :after elixir-mode
-      :map elixir-mode-map
-      :leader
-      :nv "t a" #'alchemist-mix-test
-      :nv "t v" #'alchemist-mix-test-this-buffer
-      :nv "t t" #'alchemist-project-toggle-file-and-tests)
+(add-hook! 'elixir-mode-hook
+  (map! :mode elixir-mode
+        :leader
+        :nv "t a" #'alchemist-mix-test
+        :nv "t v" #'alchemist-mix-test-this-buffer
+        :nv "t t" #'alchemist-project-toggle-file-and-tests))
 
 (after! polymode
   (define-hostmode poly-elixir-hostmode :mode 'elixir-mode)
