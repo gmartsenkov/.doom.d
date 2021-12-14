@@ -6,8 +6,9 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Georgi Martsenkov"
+      user-mail-address "g.martsenkov@gmail.com")
+
 (setq doom-font (font-spec :family "Jetbrains Mono" :size 15))
 
 (setq ruby-insert-encoding-magic-comment nil)
@@ -18,21 +19,23 @@
 (global-visual-line-mode t)
 (setq word-wrap 1)
 
-(map! :map ruby-mode-hook
+(map! :after ruby-mode
+      :map ruby-mode-map
       :leader
-      "t t" #'rspec-toggle-spec-and-target
-      "t v" #'rspec-verify
-      "t l" #'rspec-run-last-failed
-      "t c" #'rspec-verify-single
-      "t a" #'rspec-verify-all
-      "m b i" #'bundle-install
-      "m p" #'rubocop-check-project)
+      :nv "t t" #'rspec-toggle-spec-and-target
+      :nv "t v" #'rspec-verify
+      :nv "t l" #'rspec-run-last-failed
+      :nv "t c" #'rspec-verify-single
+      :nv "t a" #'rspec-verify-all
+      :nv "m b i" #'bundle-install
+      :nv "m p" #'rubocop-check-project)
 
-(map! :map elixir-mode-hook
+(map! :after elixir-mode
+      :map elixir-mode-map
       :leader
-      "t a" #'alchemist-mix-test
-      "t v" #'alchemist-mix-test-this-buffer
-      "t t" #'alchemist-project-toggle-file-and-tests)
+      :nv "t a" #'alchemist-mix-test
+      :nv "t v" #'alchemist-mix-test-this-buffer
+      :nv "t t" #'alchemist-project-toggle-file-and-tests)
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
