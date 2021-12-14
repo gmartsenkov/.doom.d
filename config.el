@@ -11,6 +11,7 @@
 
 (setq doom-font (font-spec :family "Jetbrains Mono" :size 15))
 
+(setq lsp-enable-file-watchers nil)
 (setq ruby-insert-encoding-magic-comment nil)
 (setq rspec-primary-source-dirs '("app"))
 (setq company-idle-delay .1)
