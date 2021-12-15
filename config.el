@@ -39,6 +39,7 @@
         :nv "t t" #'alchemist-project-toggle-file-and-tests))
 
 (after! polymode
+  (add-to-list 'web-mode-engines-alist '("phoenix" . "\\.ex\\'"))
   (define-hostmode poly-elixir-hostmode :mode 'elixir-mode)
   (define-innermode poly-liveview-expr-elixir-innermode
     :mode 'web-mode
