@@ -21,6 +21,7 @@
 (global-visual-line-mode t)
 (setq word-wrap 1)
 
+(map! :leader :nv "t c" nil)
 (map! :map ruby-mode-map
       :nv "SPC t t" #'rspec-toggle-spec-and-target
       :nv "SPC t v" #'rspec-verify
@@ -35,11 +36,12 @@
       :nv "SPC t v" #'alchemist-mix-test-this-buffer
       :nv "SPC t t" #'alchemist-project-toggle-file-and-tests)
 
-(set-popup-rules!
-  '(("^\\*rspec-compilation\\*$"
-     :vslot -2 :size 0.5  :autosave t :quit t :ttl nil)
-    ("^\\*alchemist test report\\*$"
-     :vslot -2 :size 0.5  :autosave t :quit t :ttl nil)))
+(after! popup
+  (set-popup-rules!
+    '(("^\\*rspec-compilation\\*$"
+       :vslot -2 :size 0.5  :autosave t :quit t :ttl nil)
+      ("^\\*alchemist test report\\*$"
+       :vslot -2 :size 0.5  :autosave t :quit t :ttl nil))))
 
 (after! (:and polymode web-mode)
   (add-to-list 'web-mode-engines-alist '("phoenix" . "\\.ex\\'"))
