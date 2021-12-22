@@ -13,32 +13,29 @@
 
 (setq lsp-enable-file-watchers nil)
 (setq ruby-insert-encoding-magic-comment nil)
-(setq rspec-primary-source-dirs '("app"))
+;(setq rspec-primary-source-dirs '("app"))
+(setq rspec-primary-source-dirs '("app" "apps" "lib"))
 (setq company-idle-delay .1)
 (setq doom-modeline-buffer-encoding nil)
 (setq doom-modeline-percent-position nil)
 (global-visual-line-mode t)
 (setq word-wrap 1)
 
-(add-hook! 'ruby-mode-hook
-  (map! :mode ruby-mode
-        :leader
-        :nv "t t" #'rspec-toggle-spec-and-target
-        :nv "t v" #'rspec-verify
-        :nv "t l" #'rspec-run-last-failed
-        :nv "t c" #'rspec-verify-single
-        :nv "t a" #'rspec-verify-all
-        :nv "m b i" #'bundle-install
-        :nv "m p" #'rubocop-check-project))
+(map! :map ruby-mode-map
+      :nv "SPC t t" #'rspec-toggle-spec-and-target
+      :nv "SPC t v" #'rspec-verify
+      :nv "SPC t l" #'rspec-run-last-failed
+      :nv "SPC t c" #'rspec-verify-single
+      :nv "SPC t a" #'rspec-verify-all
+      :nv "SPC m b i" #'bundle-install
+      :nv "SPC m p" #'rubocop-check-project)
 
-(add-hook! 'elixir-mode-hook
-  (map! :mode elixir-mode
-        :leader
-        :nv "t a" #'alchemist-mix-test
-        :nv "t v" #'alchemist-mix-test-this-buffer
-        :nv "t t" #'alchemist-project-toggle-file-and-tests))
+(map! :map elixir-mode-map
+      :nv "SPC t a" #'alchemist-mix-test
+      :nv "SPC t v" #'alchemist-mix-test-this-buffer
+      :nv "SPC t t" #'alchemist-project-toggle-file-and-tests)
 
-(after! polymode
+(after! (:and polymode web-mode)
   (add-to-list 'web-mode-engines-alist '("phoenix" . "\\.ex\\'"))
   (define-hostmode poly-elixir-hostmode :mode 'elixir-mode)
   (define-innermode poly-liveview-expr-elixir-innermode
