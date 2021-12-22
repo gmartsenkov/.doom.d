@@ -35,6 +35,12 @@
       :nv "SPC t v" #'alchemist-mix-test-this-buffer
       :nv "SPC t t" #'alchemist-project-toggle-file-and-tests)
 
+(set-popup-rules!
+  '(("^\\*rspec-compilation\\*$"
+     :vslot -2 :size 0.5  :autosave t :quit t :ttl nil)
+    ("^\\*alchemist test report\\*$"
+     :vslot -2 :size 0.5  :autosave t :quit t :ttl nil)))
+
 (after! (:and polymode web-mode)
   (add-to-list 'web-mode-engines-alist '("phoenix" . "\\.ex\\'"))
   (define-hostmode poly-elixir-hostmode :mode 'elixir-mode)
