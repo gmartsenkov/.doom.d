@@ -22,6 +22,8 @@
 (setq word-wrap 1)
 
 (map! :leader :nv "t c" nil)
+(map! :leader :nv "t l" nil)
+
 (map! :map ruby-mode-map
       :nv "SPC t t" #'rspec-toggle-spec-and-target
       :nv "SPC t v" #'rspec-verify
