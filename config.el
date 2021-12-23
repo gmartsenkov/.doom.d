@@ -38,6 +38,13 @@
       :nv "SPC t v" #'alchemist-mix-test-this-buffer
       :nv "SPC t t" #'alchemist-project-toggle-file-and-tests)
 
+(after! company
+  :init
+  (setq! +lsp-company-backends
+         (if (featurep! :editor snippets)
+             '(:separate company-yasnippet company-capf)
+           'company-capf)))
+
 (after! popup
   (set-popup-rules!
     '(("^\\*rspec-compilation\\*$"
