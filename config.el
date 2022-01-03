@@ -24,6 +24,11 @@
 (map! :leader :nv "t c" nil)
 (map! :leader :nv "t l" nil)
 
+(map! :map crystal-mode-map
+      :nv "SPC t t" #'crystal-spec-switch
+      :nv "SPC t v" #'crystal-spec-buffer
+      :nv "SPC t a" #'crystal-spec-all)
+
 (map! :map ruby-mode-map
       :nv "SPC t t" #'rspec-toggle-spec-and-target
       :nv "SPC t v" #'rspec-verify
@@ -49,6 +54,8 @@
   (set-popup-rules!
     '(("^\\*rspec-compilation\\*$"
        :vslot -2 :size 0.5  :autosave t :quit t :ttl nil)
+      ("^\\*Crystal-spec\\*$"
+       :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
       ("^\\*alchemist test report\\*$"
        :vslot -2 :size 0.5  :autosave t :quit t :ttl nil))))
 
