@@ -59,6 +59,11 @@
       ("^\\*alchemist test report\\*$"
        :vslot -2 :size 0.5  :autosave t :quit t :ttl nil))))
 
+(after! ivy
+  (add-to-list 'all-the-icons-data/file-icon-alist '("crystal" . "\xE902"))
+  (add-to-list 'all-the-icons-extension-icon-alist '("cr"      all-the-icons-fileicon "crystal"            :face all-the-icons-dsilver))
+  (add-to-list 'all-the-icons-regexp-icon-alist '("_?spec\\.cr$"        all-the-icons-fileicon "crystal"   :face all-the-icons-dred)))
+
 (after! (:and polymode web-mode)
   (add-to-list 'web-mode-engines-alist '("phoenix" . "\\.ex\\'"))
   (define-hostmode poly-elixir-hostmode :mode 'elixir-mode)
