@@ -56,6 +56,8 @@
        :vslot -2 :size 0.5  :autosave t :quit t :ttl nil)
       ("^\\*Crystal-spec\\*$"
        :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
+      ("^\\*Bundler\\*$"
+       :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
       ("^\\*alchemist test report\\*$"
        :vslot -2 :size 0.5  :autosave t :quit t :ttl nil))))
 
@@ -97,7 +99,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-solarized-light)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
