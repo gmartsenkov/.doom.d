@@ -9,7 +9,7 @@
 (setq user-full-name "Georgi Martsenkov"
       user-mail-address "g.martsenkov@gmail.com")
 
-(setq doom-font (font-spec :family "Jetbrains Mono" :size 15))
+(setq doom-font (font-spec :family "Jetbrains Mono" :size 16))
 
 
 (add-to-list 'safe-local-eval-forms '(set
@@ -92,6 +92,7 @@
   (setq auto-mode-alist (append '(("\\.ex$" . poly-elixir-web-mode)) auto-mode-alist)))
 
 (add-to-list 'auto-mode-alist '("\\.\\(em\\|emblem\\)" . slim-mode))
+(add-to-list 'auto-mode-alist '("\\.rbi" . ruby-mode))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -109,7 +110,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-solarized-light)
+(setq doom-theme 'doom-one)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
