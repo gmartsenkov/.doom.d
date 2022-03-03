@@ -11,6 +11,14 @@
 
 (setq doom-font (font-spec :family "Jetbrains Mono" :size 15))
 
+
+(add-to-list 'safe-local-eval-forms '(set
+                                      (make-local-variable 'lsp-disabled-clients)
+                                      (setq lsp-disabled-clients '(ruby-ls))))
+
+;(setq lsp-disabled-clients '())
+;(setq lsp-disabled-clients '(ruby-ls))
+(setq lsp-sorbet-use-bundler t)
 (setq lsp-enable-file-watchers nil)
 (setq ruby-insert-encoding-magic-comment nil)
 ;(setq rspec-primary-source-dirs '("app"))
@@ -83,6 +91,8 @@
     :innermodes '(poly-liveview-expr-elixir-innermode))
   (setq auto-mode-alist (append '(("\\.ex$" . poly-elixir-web-mode)) auto-mode-alist)))
 
+(add-to-list 'auto-mode-alist '("\\.\\(em\\|emblem\\)" . slim-mode))
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -108,7 +118,6 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
