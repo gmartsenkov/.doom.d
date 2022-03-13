@@ -9,20 +9,23 @@
 (setq user-full-name "Georgi Martsenkov"
       user-mail-address "g.martsenkov@gmail.com")
 
-(setq doom-font (font-spec :family "Jetbrains Mono" :size 16))
+(setq doom-font (font-spec :family "Jetbrains Mono" :size 15))
 
-
+(setq lsp-enable-snippet nil)
 (add-to-list 'safe-local-eval-forms '(set
                                       (make-local-variable 'lsp-disabled-clients)
                                       (setq lsp-disabled-clients '(ruby-ls))))
-
+(add-to-list 'safe-local-eval-forms '(set
+                                      (make-local-variable 'rspec-primary-source-dirs)
+                                      (setq rspec-primary-source-dirs '("app" "apps" "lib"))))
+(setq-default line-spacing 3)
 ;(setq lsp-disabled-clients '())
 ;(setq lsp-disabled-clients '(ruby-ls))
 (setq lsp-sorbet-use-bundler t)
 (setq lsp-enable-file-watchers nil)
 (setq ruby-insert-encoding-magic-comment nil)
-;(setq rspec-primary-source-dirs '("app"))
-(setq rspec-primary-source-dirs '("app" "apps" "lib"))
+(setq rspec-primary-source-dirs '("app"))
+;(setq rspec-primary-source-dirs '("app" "apps" "lib"))
 (setq company-idle-delay .1)
 (setq doom-modeline-buffer-encoding nil)
 (setq doom-modeline-percent-position nil)
