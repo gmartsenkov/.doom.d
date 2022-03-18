@@ -18,7 +18,7 @@
 (add-to-list 'safe-local-eval-forms '(set
                                       (make-local-variable 'rspec-primary-source-dirs)
                                       (setq rspec-primary-source-dirs '("app" "apps" "lib"))))
-(setq-default line-spacing 3)
+(setq-default line-spacing 2)
 ;(setq lsp-disabled-clients '())
 ;(setq lsp-disabled-clients '(ruby-ls))
 (setq lsp-sorbet-use-bundler t)
