@@ -97,6 +97,8 @@
 (add-to-list 'auto-mode-alist '("\\.\\(em\\|emblem\\)" . slim-mode))
 (add-to-list 'auto-mode-alist '("\\.rbi" . ruby-mode))
 
+(setq gofmt-command "goimports")
+(add-hook 'before-save-hook 'gofmt-before-save)
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
