@@ -6,6 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
+(gcmh-mode 1)
+
 (setq user-full-name "Georgi Martsenkov"
       user-mail-address "g.martsenkov@gmail.com")
 
@@ -54,6 +56,10 @@
       :nv "SPC t v" #'alchemist-mix-test-this-buffer
       :nv "SPC t t" #'alchemist-project-toggle-file-and-tests)
 
+(map! :map go-mode-map
+      :nv "SPC t v" #'+go/test-single
+      :nv "SPC t a" #'+go/test-all
+      :nv "SPC t f" #'+go/test-rerun)
 (after! company
   :init
   (setq! +lsp-company-backends
