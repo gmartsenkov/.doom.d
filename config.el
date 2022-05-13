@@ -7,7 +7,8 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (gcmh-mode 1)
-
+(setq nano-modeline-position 'bottom)
+(nano-modeline-mode t)
 (setq user-full-name "Georgi Martsenkov"
       user-mail-address "g.martsenkov@gmail.com")
 
