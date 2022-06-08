@@ -8,7 +8,6 @@
 (package! polymode)
 (package! slim-mode)
 (package! gcmh)
-(package! nano-modeline)
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)

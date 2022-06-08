@@ -8,7 +8,6 @@
 ;; clients, file templates and snippets.
 (gcmh-mode 1)
 (setq nano-modeline-position 'bottom)
-(nano-modeline-mode t)
 (setq user-full-name "Georgi Martsenkov"
       user-mail-address "g.martsenkov@gmail.com")
 
@@ -24,6 +23,7 @@
 (setq-default line-spacing 2)
 ;(setq lsp-disabled-clients '())
 ;(setq lsp-disabled-clients '(ruby-ls))
+(setq lsp-lens-enable nil)
 (setq lsp-sorbet-use-bundler t)
 (setq lsp-enable-file-watchers nil)
 (setq ruby-insert-encoding-magic-comment nil)
@@ -84,12 +84,12 @@
   (add-to-list 'all-the-icons-extension-icon-alist '("cr"      all-the-icons-fileicon "crystal"            :face all-the-icons-dsilver))
   (add-to-list 'all-the-icons-regexp-icon-alist '("_?spec\\.cr$"        all-the-icons-fileicon "crystal"   :face all-the-icons-dred)))
 
-(after! (:and polymode web-mode)
-  (add-to-list 'web-mode-engines-alist '("phoenix" . "\\.ex\\'"))
+(after! polymode
+  ;;(add-to-list 'web-mode-engines-alist '("phoenix" . "\\.ex\\'"))
   (define-hostmode poly-elixir-hostmode :mode 'elixir-mode)
   (define-innermode poly-liveview-expr-elixir-innermode
     :mode 'web-mode
-    :head-matcher (rx line-start (* space) "~H" (= 3 (char "\"'")) line-end)
+    :head-matcher (rx line-start (* space) "~F" (= 3 (char "\"'")) line-end)
     :tail-matcher (rx line-start (* space) (= 3 (char "\"'")) line-end)
     :head-mode 'host
     :tail-mode 'host
@@ -130,7 +130,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type nil)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
