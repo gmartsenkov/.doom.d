@@ -8,6 +8,13 @@
 (package! polymode)
 (package! slim-mode)
 (package! gcmh)
+(package! posframe)
+(package! lsp-bridge
+  :recipe
+  (
+   :host github
+   :repo "manateelazycat/lsp-bridge"
+   :files ("*.el" "acm/*" "acm/icons/*" "core/*.el" "*.py")))
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
