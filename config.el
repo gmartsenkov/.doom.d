@@ -11,7 +11,7 @@
 (setq user-full-name "Georgi Martsenkov"
       user-mail-address "g.martsenkov@gmail.com")
 
-(setq doom-font (font-spec :family "Jetbrains Mono" :size 15))
+(setq doom-font (font-spec :family "Jetbrains Mono Nerd Font" :size 15 :weight 'medium))
 
 (setq lsp-enable-snippet nil)
 (add-to-list 'safe-local-eval-forms '(set
@@ -24,7 +24,7 @@
 ;(setq lsp-disabled-clients '())
 ;(setq lsp-disabled-clients '(ruby-ls))
 (setq lsp-lens-enable nil)
-(setq lsp-sorbet-use-bundler t)
+;(setq lsp-sorbet-use-bundler t)
 (setq lsp-enable-file-watchers nil)
 (setq ruby-insert-encoding-magic-comment nil)
 (setq rspec-primary-source-dirs '("app"))
@@ -130,7 +130,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type nil)
+(setq display-line-numbers-type t)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
