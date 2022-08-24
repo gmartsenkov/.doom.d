@@ -11,8 +11,8 @@
 (setq user-full-name "Georgi Martsenkov"
       user-mail-address "g.martsenkov@gmail.com")
 
-(setq doom-font (font-spec :family "Jetbrains Mono Nerd Font" :size 15 :weight 'medium))
-
+(setq doom-font (font-spec :family "JetbrainsMono Nerd Font" :size 14 :weight 'medium))
+(setq menu-bar-mode -1)
 (setq lsp-enable-snippet nil)
 (add-to-list 'safe-local-eval-forms '(set
                                       (make-local-variable 'lsp-disabled-clients)
