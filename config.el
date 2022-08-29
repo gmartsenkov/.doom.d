@@ -6,21 +6,20 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(gcmh-mode 1)
-(setq nano-modeline-position 'bottom)
 (setq user-full-name "Georgi Martsenkov"
       user-mail-address "g.martsenkov@gmail.com")
 
 (setq doom-font (font-spec :family "JetbrainsMono Nerd Font" :size 14 :weight 'medium))
-(setq menu-bar-mode -1)
-(setq lsp-enable-snippet nil)
 (add-to-list 'safe-local-eval-forms '(set
                                       (make-local-variable 'lsp-disabled-clients)
                                       (setq lsp-disabled-clients '(ruby-ls))))
 (add-to-list 'safe-local-eval-forms '(set
                                       (make-local-variable 'rspec-primary-source-dirs)
                                       (setq rspec-primary-source-dirs '("app" "apps" "lib"))))
+
+(setq lsp-enable-snippet nil)
 (setq-default line-spacing 2)
+(setq menu-bar-mode -1)
 ;(setq lsp-disabled-clients '())
 ;(setq lsp-disabled-clients '(ruby-ls))
 (setq lsp-lens-enable nil)
@@ -38,10 +37,16 @@
 (map! :leader :nv "t c" nil)
 (map! :leader :nv "t l" nil)
 
+(setq projectile-per-project-compilation-buffer t)
+(defun crystal-spec-project ()
+  (interactive)
+  (let ((compilation-read-command nil))
+    (projectile-test-project nil)))
+
 (map! :map crystal-mode-map
       :nv "SPC t t" #'crystal-spec-switch
       :nv "SPC t v" #'crystal-spec-buffer
-      :nv "SPC t a" #'crystal-spec-all)
+      :nv "SPC t a" #'crystal-spec-project)
 
 (map! :map ruby-mode-map
       :nv "SPC t t" #'rspec-toggle-spec-and-target
@@ -74,6 +79,8 @@
        :vslot -2 :size 0.5  :autosave t :quit t :ttl nil)
       ("^\\*Crystal-spec\\*$"
        :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
+      ("^\\*compilation\\*$"
+       :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
       ("^\\*Bundler\\*$"
        :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
       ("^\\*alchemist test report\\*$"
@@ -89,7 +96,7 @@
   (define-hostmode poly-elixir-hostmode :mode 'elixir-mode)
   (define-innermode poly-liveview-expr-elixir-innermode
     :mode 'web-mode
-    :head-matcher (rx line-start (* space) "~H" (= 3 (char "\"'")) line-end)
+    :head-matcher (rx line-start (* space) "~F" (= 3 (char "\"'")) line-end)
     :tail-matcher (rx line-start (* space) (= 3 (char "\"'")) line-end)
     :head-mode 'host
     :tail-mode 'host
