@@ -4,9 +4,7 @@
 ;; sync' after modifying this file!
 
 
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
-(setq user-full-name "Georgi Martsenkov"
+;; Some functionality uses this to identify you, e.g. GPG configuration, email clients, file templates and snippets. (setq user-full-name "Georgi Martsenkov"
       user-mail-address "g.martsenkov@gmail.com")
 
 (setq doom-font (font-spec :family "JetbrainsMono Nerd Font" :size 14 :weight 'medium))
@@ -36,6 +34,10 @@
 
 (map! :leader :nv "t c" nil)
 (map! :leader :nv "t l" nil)
+(map! :g "C-h" 'evil-window-left)
+(map! :g "C-l" 'evil-window-right)
+(map! :g "C-j" 'evil-window-down)
+(map! :g "C-k" 'evil-window-up)
 
 (setq projectile-per-project-compilation-buffer t)
 (defun crystal-spec-project ()
