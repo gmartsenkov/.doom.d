@@ -42,6 +42,7 @@
 (map! :g "C-k" 'evil-window-up)
 
 (setq projectile-per-project-compilation-buffer t)
+
 (defun crystal-spec-project ()
   (interactive)
   (let ((compilation-read-command nil))
@@ -70,22 +71,16 @@
       :nv "SPC t v" #'+go/test-single
       :nv "SPC t a" #'+go/test-all
       :nv "SPC t f" #'+go/test-rerun)
-(after! company
-  :init
-  (setq! +lsp-company-backends
-         (if (featurep! :editor snippets)
-             '(:separate company-yasnippet company-capf)
-           'company-capf)))
 
 (after! popup
   (set-popup-rules!
-    '(("^\\*rspec-compilation\\*$"
+    '(("^\\*rspec-compilation"
        :vslot -2 :size 0.5  :autosave t :quit t :ttl nil)
       ("^\\*Crystal-spec\\*$"
        :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
-      ("^\\*compilation\\*$"
+      ("^\\*compilation"
        :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
-      ("^\\*Bundler\\*$"
+      ("^\\*Bundler"
        :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
       ("^\\*RuboCop"
        :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
