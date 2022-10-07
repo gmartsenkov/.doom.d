@@ -16,6 +16,9 @@
                                       (make-local-variable 'rspec-primary-source-dirs)
                                       (setq rspec-primary-source-dirs '("app" "apps" "lib"))))
 
+(after! eglot
+  (add-to-list 'eglot-server-programs '(elixir-mode "~/elixir-ls/release/language_server.sh")))
+
 (setq doom-gruvbox-dark-variant "soft")
 (setq lsp-enable-snippet nil)
 (setq-default line-spacing 2)

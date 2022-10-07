@@ -6,6 +6,7 @@
 ;; use 'M-x doom/reload'.
 
 (package! robe :disable t)
+(package! alchemist-company :disable t)
 (package! polymode)
 (package! slim-mode)
 (package! gcmh)
