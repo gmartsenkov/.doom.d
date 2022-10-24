@@ -8,6 +8,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email clients, file templates and snippets. (setq user-full-name "Georgi Martsenkov"
       user-mail-address "g.martsenkov@gmail.com")
 
+(setq eglot-events-buffer-size 0)
 (setq doom-font (font-spec :family "JetbrainsMono Nerd Font" :size 14 :weight 'medium))
 (add-to-list 'safe-local-eval-forms '(set
                                       (make-local-variable 'lsp-disabled-clients)
