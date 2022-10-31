@@ -40,6 +40,7 @@
 
 (map! :leader :nv "t c" nil)
 (map! :leader :nv "t l" nil)
+(map! :leader :nv "t v" nil)
 (map! :g "C-h" 'evil-window-left)
 (map! :g "C-l" 'evil-window-right)
 (map! :g "C-j" 'evil-window-down)
