@@ -12,6 +12,8 @@
 (package! gcmh)
 (package! flycheck-ameba)
 (package! nano-theme :recipe (:host github :repo "rougier/nano-theme"))
+(package! copilot
+  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
