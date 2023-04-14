@@ -20,6 +20,8 @@
 (after! eglot
   (add-to-list 'eglot-server-programs '(elixir-mode "~/elixir-ls/release/language_server.sh")))
 
+(setq ivy-virtual-abbreviate 'full)
+(setq projectile-create-missing-test-files t)
 (setq doom-gruvbox-dark-variant "soft")
 (setq lsp-enable-snippet nil)
 (setq-default line-spacing 2)
@@ -27,6 +29,7 @@
 ;(setq lsp-disabled-clients '())
 ;(setq lsp-disabled-clients '(ruby-ls))
 (setq lsp-lens-enable nil)
+(setq lsp-elixir-local-server-command "~/elixir-ls/release/language_server.sh")
 ;(setq lsp-sorbet-use-bundler t)
 (setq lsp-enable-file-watchers nil)
 (setq ruby-insert-encoding-magic-comment nil)
@@ -83,6 +86,8 @@
        :vslot -2 :size 0.5  :autosave t :quit t :ttl nil)
       ("^\\*Crystal-spec\\*$"
        :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
+      ("^\\*cargo-test\\*$"
+       :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
       ("^\\*compilation"
        :vslot -2 :size 0.4  :autosave t :quit t :ttl nil)
       ("^\\*Bundler"
@@ -119,6 +124,7 @@
 
 (setq gofmt-command "goimports")
 (add-hook 'before-save-hook 'gofmt-before-save)
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -144,7 +150,15 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
-
+(defun er-copy-file-name-to-clipboard ()
+  "Copy the current buffer file name to the clipboard."
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (kill-new filename)
+      (message "Copied buffer file name '%s' to the clipboard." filename))))
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
